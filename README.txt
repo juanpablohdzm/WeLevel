@@ -4,6 +4,11 @@ Tasks and requirements are not shared to protect the privacy of the company for 
 
 Although any of the tasks and requirements are not shared, the code will be generally explained to give the recruiters and understandment of the project.
 
+###TEST###
+1.Open the map TestMap
+2.Hit play
+3.Click F on the keyboard to add a tag to the target
+
 ###CODE####
 
 The project consists in two classes. 
