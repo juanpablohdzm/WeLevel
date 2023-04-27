@@ -27,13 +27,9 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
-protected:
-
 	UFUNCTION(BlueprintCallable, Category = "Tags")
 	void AddTag(FGameplayTag Tag);
-
-public:
+	
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Tags")
 	const FGameplayTagContainer& GetTags() const;
 
