@@ -30,13 +30,16 @@ bool UWLAsyncTagListener::AsyncDetectTagChange_Internal(float DeltaTime)
 		SetReadyToDestroy();
 		return false;
 	}
-	AsyncTask(ENamedThreads::GameThread,[=]()
+	AsyncTask(ENamedThreads::AnyBackgroundThreadNormalTask,[=]()
 	{
 		FGameplayTagContainer NewTags = Target->GetTags();
 		if (NewTags != OldTags)
 		{
 			OldTags = NewTags;
-			OnTagChanged.Broadcast();
+			AsyncTask(ENamedThreads::GameThread, [=]()
+			{
+				OnTagChanged.Broadcast();
+			});
 		}
 	});
 	
